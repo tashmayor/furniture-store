@@ -67,7 +67,8 @@ body {
   display: grid;
   grid-template-rows: 300px 300px 300px;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas: "bookcases bedroom patio"
+  grid-template-areas:
+    "bookcases bedroom patio"
     "couches couches patio"
     "desks desks desks"
   ;
@@ -75,31 +76,32 @@ body {
 
 #bookcases {
   grid-area: bookcases;
-  background-image: url(../images/bookcases@2x.png);
+  background-image: url("../images/bookcases@2x.png");
+
 }
 
 #bedroom {
   grid-area: bedroom;
-  background-image: url(../images/beds@2x.png);
+  background-image: url("../images/beds@2x.png");
 }
 
 #couches {
   grid-area: couches;
-  background-image: url(../images/couch@2x.png);
+  background-image: url("../images/couch@2x.png");
 }
 
 #patio {
   grid-area: patio;
-  background-image: url(../images/patio@2x.png);
+  background-image: url("../images/patio@2x.png");
 }
 
 #desks {
   grid-area: desks;
-  background-image: url(../images/desks@2x.png);
+  background-image: url("../images/desks@2x.png");
 }
 
 .categoryGridArea {
-  background-position-x: center;
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   margin: 5px;
@@ -115,8 +117,8 @@ body {
   color: white;
   font-size: 18px;
   border-bottom: 5px solid #FF6200;
-
 }
+
 
 /* Navigation CSS */
 /* CHECK OUT THIS CODE BELOW IF YOU WANT TO GET A REFRESHER ON FLEX */
@@ -187,4 +189,39 @@ h4 {
   font-weight: 300;
   margin: 0px 0px;
   color: #636364;
+}
+
+@media only screen and (max-width: 1000px) {
+  #navigation {
+    display: none;
+  }
+
+  .icons {
+    margin-left: auto;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #headline {
+    position: static;
+    margin: 20px;
+  }
+
+  #heroGrid {
+    grid-template-areas:
+      “featuredProduct featuredProduct”
+      “secondaryProduct CTA”;
+  }
+
+  #categoryGrid {
+    grid-template-rows: 300px 300px 300px 300px 300px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "Bookcases"
+      "Bedroom"
+      "Patio"
+      "Couches"
+      "Desks"
+    ;
+  }
 }
